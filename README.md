@@ -1,13 +1,13 @@
 # Prueba con Electron y Angular
 
-Instale los m¢dulos necesarios:
+Instale los m√≥dulos necesarios:
 
-npm install 
+npm install_all
 
 Ejecute el programa:
 
 npm start
 
-Genere la veri¢n ejecutable:
+Genere la veri√≥n ejecutable:
 
 npm run dist
