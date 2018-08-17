@@ -1,22 +1,56 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "electron": "^2.0.0"
-  }
+    "name": "prueba",
+    "version": "1.0.0",
+    "description": "A minimal Electron+Angular application",
+    "main": "main.js",
+    "scripts": {
+        "install_all": "npm install && cd ng2 && npm install && cd ..",
+        "start": "cd ng2 && ng build --output-path dist --base-href . && cd .. && electron .",
+        "electron": "electron .",
+        "serve": "cd ng2 && ng serve && cd ..",
+        "build": "cd ng2 && ng build -prod -bh ./ && cd ..",
+        "pack": "build --dir",
+        "dist": "build"
+    },
+    "repository": "https://github.com/electron/electron-quick-start",
+    "keywords": [
+        "Electron",
+        "quick",
+        "start",
+        "tutorial",
+        "demo"
+    ],
+    "author": "GitHub",
+    "license": "MIT",
+    "build": {
+        "appId": "pruebaalectronAngular",
+        "asar": true,
+        "dmg": {
+            "contents": [{
+                    "x": 110,
+                    "y": 150
+                },
+                {
+                    "x": 240,
+                    "y": 150,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ]
+        },
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb"
+            ]
+        },
+        "win": {
+            "target": "NSIS",
+            "icon": "build/icon.ico"
+        }
+    },
+    "devDependencies": {
+        "electron": "^2.0.0",
+        "electron-builder": "^20.28.1"
+    }
 }
